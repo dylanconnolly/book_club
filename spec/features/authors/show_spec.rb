@@ -14,6 +14,11 @@ RSpec.describe "author show page" do
     steve.books << book2
     steve.books << book3
 
-    
+    visit "/authors/#{bob.id}"
+
+    expect(page).to have_content(bob.name)
+    expect(page).to have_content(book1.title)
+    expect(page).to have_content(book3.title)
+    expect(page).to have_content("Average number of pages: 1,020")
   end
 end
