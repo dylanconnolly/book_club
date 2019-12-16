@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Book do
   describe "relationships" do
-    it { should have_many :authorbooks }
-    it { should have_many(:authors).through(:authorbooks) }
+    it { should have_many :author_books }
+    it { should have_many(:authors).through(:author_books) }
   end
 
   describe "validations" do
@@ -11,3 +11,4 @@ RSpec.describe Book do
     it {should validate_presence_of :pages}
     it {should validate_presence_of :publication_year}
   end
+end
